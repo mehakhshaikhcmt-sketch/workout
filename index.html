@@ -246,16 +246,31 @@ function toggleStatus(el){
   updateProgress();
 }
 
-// Initialize tracker from localStorage on page load
+// Initialize tracker from localStorage and highlight today
 document.addEventListener('DOMContentLoaded', () => {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const todayIndex = new Date().getDay(); // 0 = Sunday, 1 = Monday, ...
+  const todayName = days[todayIndex];
+
   document.querySelectorAll('.tracker').forEach(el => {
     const day = el.dataset.day;
     const status = localStorage.getItem(day) || 'red';
+
+    // Reset all colors
     el.classList.remove('bg-red-200','bg-yellow-200','bg-green-200');
     el.classList.add(`bg-${status}-200`);
+
+    // Highlight today
+    if(day === todayName){
+      el.classList.add('border-4','border-blue-500');
+    } else {
+      el.classList.remove('border-4','border-blue-500');
+    }
   });
+
   updateProgress();
 });
+
 
 // Update weekly progress bar
 function updateProgress(){
@@ -298,3 +313,4 @@ function updateProgress(){
 </body>
 
 </html>
+
