@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mehak's Interactive Workout Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-pink-200 p-6 text-center">
+  <h1 class="text-3xl font-bold">Mehak’s 7-Day Home Workout Plan</h1>
+  <p class="mt-2 text-lg">Interactive video popups | Color-coded tracker | Diet chart included</p>
+</header>
+
+<!-- Weekly Progress Summary -->
+<section class="p-6 bg-white shadow rounded-lg mx-4 md:mx-20 my-4">
+  <h2 class="text-2xl font-semibold mb-2">Weekly Progress</h2>
+  <div class="flex justify-between mb-2">
+    <span id="progress-text">0 of 7 days completed</span>
+    <span id="progress-percent">0%</span>
+  </div>
+  <div class="w-full bg-gray-300 rounded-full h-6">
+    <div id="progress-bar" class="bg-green-500 h-6 rounded-full" style="width: 0%;"></div>
+  </div>
+</section>
+
+<!-- Workout Schedule -->
+<section class="p-6">
+  <h2 class="text-2xl font-semibold mb-4">Weekly Schedule</h2>
+  <div class="space-y-4">
+
+    <!-- Example: Monday -->
+    <div class="bg-white shadow rounded-lg p-4">
+      <h3 class="font-bold text-xl mb-2">Monday – Full Body Burn + Abs (2 hrs)</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>
+          15 Min Full Body Warm Up – 
+          <button onclick="openVideo('https://www.youtube.com/embed/1')" class="text-blue-500 underline">Chloe Ting</button>
+        </li>
+        <li>
+          30 Min Fat Burning Cardio – 
+          <button onclick="openVideo('https://www.youtube.com/embed/2')" class="text-blue-500 underline">Pamela Reif</button>
+        </li>
+        <li>
+          10 Min Abs Workout – 
+          <button onclick="openVideo('https://www.youtube.com/embed/3')" class="text-blue-500 underline">Chloe Ting</button>
+        </li>
+        <li>
+          10 Min Full Body Stretch – 
+          <button onclick="openVideo('https://www.youtube.com/embed/4')" class="text-blue-500 underline">Maddie Lymburner</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Repeat for other days… -->
+
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-lg p-4 w-11/12 md:w-3/4 lg:w-1/2">
+    <button onclick="closeVideo()" class="float-right text-red-500 font-bold text-xl">✖</button>
+    <iframe id="videoFrame" class="w-full h-64 md:h-96 mt-4" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+function openVideo(url){
+  document.getElementById('videoFrame').src = url + "?autoplay=1";
+  document.getElementById('videoModal').classList.remove('hidden');
+}
+
+function closeVideo(){
+  document.getElementById('videoFrame').src = "";
+  document.getElementById('videoModal').classList.add('hidden');
+}
+</script>
+
+<!-- Tracker Section -->
+<section class="p-6 bg-gray-100">
+  <h2 class="text-2xl font-semibold mb-4">Workout Tracker</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Monday">Monday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Tuesday">Tuesday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Wednesday">Wednesday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Thursday">Thursday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Friday">Friday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Saturday">Saturday</div>
+    <div onclick="toggleStatus(this)" class="tracker cursor-pointer bg-red-200 text-center py-4 rounded font-semibold" data-day="Sunday">Sunday</div>
+  </div>
+</section>
+
+<script>
+function toggleStatus(el){
+  const day = el.dataset.day;
+  let current = localStorage.getItem(day) || 'red';
+
+  if(current === 'red'){
+    el.classList.remove('bg-red-200');
+    el.classList.add('bg-yellow-200');
+    localStorage.setItem(day, 'yellow');
+  } else if(current === 'yellow'){
+    el.classList.remove('bg-yellow-200');
+    el.classList.add('bg-green-200');
+    localStorage.setItem(day, 'green');
+  } else {
+    el.classList.remove('bg-green-200');
+    el.classList.add('bg-red-200');
+    localStorage.setItem(day, 'red');
+  }
+
+  updateProgress();
+}
+
+// Initialize tracker from localStorage on page load
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tracker').forEach(el => {
+    const day = el.dataset.day;
+    const status = localStorage.getItem(day) || 'red';
+    el.classList.remove('bg-red-200','bg-yellow-200','bg-green-200');
+    el.classList.add(`bg-${status}-200`);
+  });
+  updateProgress();
+});
+
+// Update weekly progress bar
+function updateProgress(){
+  const trackers = document.querySelectorAll('.tracker');
+  let completed = 0;
+  trackers.forEach(el => {
+    if(el.classList.contains('bg-green-200')) completed++;
+  });
+  const percent = Math.round((completed / trackers.length) * 100);
+  document.getElementById('progress-text').innerText = `${completed} of ${trackers.length} days completed`;
+  document.getElementById('progress-percent').innerText = `${percent}%`;
+  document.getElementById('progress-bar').style.width = percent + '%';
+}
+</script>
+
+<!-- Diet Chart Section -->
+<section class="p-6 bg-gray-100 mt-6">
+  <h2 class="text-2xl font-semibold mb-4">Diet Chart</h2>
+  <table class="min-w-full bg-white shadow rounded-lg">
+    <thead class="bg-pink-200">
+      <tr>
+        <th class="py-2 px-4">Meal</th>
+        <th class="py-2 px-4">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-t"><td class="py-2 px-4">Breakfast</td><td class="py-2 px-4">Oats / Cerelac / Eggs / Fruit</td></tr>
+      <tr class="border-t"><td class="py-2 px-4">Lunch</td><td class="py-2 px-4">Brown Rice / Chapati / Vegetables / Protein</td></tr>
+      <tr class="border-t"><td class="py-2 px-4">Snack</td><td class="py-2 px-4">Nuts / Yogurt / Fruit</td></tr>
+      <tr class="border-t"><td class="py-2 px-4">Dinner</td><td class="py-2 px-4">Light Protein + Vegetables / Soup</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Footer -->
+<footer class="bg-pink-200 p-4 text-center mt-6">
+  <p>© 2025 Mehak Shaikh | Interactive Workout Plan</p>
+</footer>
+
+</body>
+</html>
