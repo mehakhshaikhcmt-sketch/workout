@@ -29,186 +29,103 @@
 <!-- Day Selector Buttons -->
 <section class="p-6">
   <div class="flex flex-wrap justify-center gap-2 mb-4">
-    <button onclick="showDay('Sunday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Sunday</button>
-    <button onclick="showDay('Monday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Monday</button>
-    <button onclick="showDay('Tuesday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Tuesday</button>
-    <button onclick="showDay('Wednesday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Wednesday</button>
-    <button onclick="showDay('Thursday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Thursday</button>
-    <button onclick="showDay('Friday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Friday</button>
-    <button onclick="showDay('Saturday')" class="day-btn px-4 py-2 bg-pink-200 rounded">Saturday</button>
+    <button onclick="showDay('Sunday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Sunday</button>
+    <button onclick="showDay('Monday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Monday</button>
+    <button onclick="showDay('Tuesday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Tuesday</button>
+    <button onclick="showDay('Wednesday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Wednesday</button>
+    <button onclick="showDay('Thursday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Thursday</button>
+    <button onclick="showDay('Friday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Friday</button>
+    <button onclick="showDay('Saturday')" class="day-btn px-2 py-1 sm:px-4 sm:py-2 bg-pink-200 rounded">Saturday</button>
   </div>
 </section>
 
-
 <!-- Workout Schedule -->
 <section class="p-6">
- <!-- Monday -->
-<div class="workout-day" data-day="Monday">
-  <h3 class="font-bold text-xl mb-2">Monday – Full Body Burn + Abs (2 hrs)</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>40 min Full Body Strength – <button onclick="openVideo('BHNtFY-MSnU')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>10 Min Abs Workout – <button onclick="openVideo('2pLT-olgUJs')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
+  <!-- Example: Monday -->
+  <div class="workout-day" data-day="Monday">
+    <h3 class="font-bold text-xl mb-2">Monday – Full Body Burn + Abs (2 hrs)</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>40 min Full Body Strength – <button onclick="openVideo('BHNtFY-MSnU')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>10 Min Abs Workout – <button onclick="openVideo('2pLT-olgUJs')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 
-<!-- Tuesday -->
-<div class="workout-day hidden" data-day="Tuesday">
-  <h3 class="font-bold text-xl mb-2">Tuesday – Upper Body + Abs (2 hrs)</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>30 Min Upper Body – <button onclick="openVideo('c01hlF_EdRk')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>20 Min Cardio Kickboxing – <button onclick="openVideo('IcTzwSLig3U')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
+  <!-- Tuesday -->
+  <div class="workout-day hidden" data-day="Tuesday">
+    <h3 class="font-bold text-xl mb-2">Tuesday – Upper Body + Abs (2 hrs)</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>30 Min Upper Body – <button onclick="openVideo('c01hlF_EdRk')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>20 Min Cardio Kickboxing – <button onclick="openVideo('IcTzwSLig3U')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 
-<!-- Wednesday -->
-<div class="workout-day hidden" data-day="Wednesday">
-  <h3 class="font-bold text-xl mb-2">Wednesday – Lower Body & Hip Focus</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>45 Min HIIT Workout – <button onclick="openVideo('9seYxs-vu9s')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>10 Min Abs Workout – <button onclick="openVideo('1f8yoFFdkcY')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
+  <!-- Wednesday -->
+  <div class="workout-day hidden" data-day="Wednesday">
+    <h3 class="font-bold text-xl mb-2">Wednesday – Lower Body & Hip Focus</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>45 Min HIIT Workout – <button onclick="openVideo('9seYxs-vu9s')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>10 Min Abs Workout – <button onclick="openVideo('1f8yoFFdkcY')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 
-<!-- Thursday -->
-<div class="workout-day hidden" data-day="Thursday">
-  <h3 class="font-bold text-xl mb-2">Thursday – Active Recovery + Light Core</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>30 Min Hips & Core – <button onclick="openVideo('_lT5Cd4cDTc')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>15 Min Light Stretching – <button onclick="openVideo('utrAlZf_Pjs')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>15–20 Min Gentle Walk – <button onclick="openVideo('VH3UIZMGDWg')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
+  <!-- Thursday -->
+  <div class="workout-day hidden" data-day="Thursday">
+    <h3 class="font-bold text-xl mb-2">Thursday – Active Recovery + Light Core</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>30 Min Hips & Core – <button onclick="openVideo('_lT5Cd4cDTc')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>15 Min Light Stretching – <button onclick="openVideo('utrAlZf_Pjs')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>15–20 Min Gentle Walk – <button onclick="openVideo('VH3UIZMGDWg')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 
-<!-- Friday -->
-<div class="workout-day hidden" data-day="Friday">
-  <h3 class="font-bold text-xl mb-2">Friday – Lower Body + Core</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>40 Min Lower Body – <button onclick="openVideo('X95VrEp4VRw')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>25 Min Core – <button onclick="openVideo('NFr-3aAb2Gg')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
+  <!-- Friday -->
+  <div class="workout-day hidden" data-day="Friday">
+    <h3 class="font-bold text-xl mb-2">Friday – Lower Body + Core</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>40 Min Lower Body – <button onclick="openVideo('X95VrEp4VRw')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>25 Min Core – <button onclick="openVideo('NFr-3aAb2Gg')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 
-<!-- Saturday -->
-<div class="workout-day hidden" data-day="Saturday">
-  <h3 class="font-bold text-xl mb-2">Saturday – Rest / Yoga</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>Yoga – <button onclick="openVideo('m756Gz8de4M')" class="text-blue-500 underline">Chloe Ting</button></li>
-  </ul>
-</div>
+  <!-- Saturday -->
+  <div class="workout-day hidden" data-day="Saturday">
+    <h3 class="font-bold text-xl mb-2">Saturday – Rest / Yoga</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Yoga – <button onclick="openVideo('m756Gz8de4M')" class="text-blue-500 underline">Chloe Ting</button></li>
+    </ul>
+  </div>
 
-<!-- Sunday -->
-<div class="workout-day hidden" data-day="Sunday">
-  <h3 class="font-bold text-xl mb-2">Sunday – Full Proper Workout</h3>
-  <ul class="list-disc list-inside space-y-1">
-    <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>25 Min Upper Body – <button onclick="openVideo('WomhbEXCYfQ')" class="text-blue-500 underline">Pamela Reif</button></li>
-    <li>25 Min Lower Body – <button onclick="openVideo('9pfIDfUhKcI')" class="text-blue-500 underline">Chloe Ting</button></li>
-    <li>Core & Abs – <button onclick="openVideo('x33O9qGN_us')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-    <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
-  </ul>
-</div>
-
+  <!-- Sunday -->
+  <div class="workout-day hidden" data-day="Sunday">
+    <h3 class="font-bold text-xl mb-2">Sunday – Full Proper Workout</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>15 Min Full Body Warm Up – <button onclick="openVideo('j6C-6F6dr-4')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>25 Min Upper Body – <button onclick="openVideo('WomhbEXCYfQ')" class="text-blue-500 underline">Pamela Reif</button></li>
+      <li>25 Min Lower Body – <button onclick="openVideo('9pfIDfUhKcI')" class="text-blue-500 underline">Chloe Ting</button></li>
+      <li>Core & Abs – <button onclick="openVideo('x33O9qGN_us')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+      <li>10 Min Full Body Stretch – <button onclick="openVideo('RKYhcPV2dbA')" class="text-blue-500 underline">Maddie Lymburner</button></li>
+    </ul>
+  </div>
 </section>
 
 <!-- Video Modal -->
 <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
   <div class="bg-white rounded-lg p-4 w-11/12 md:w-3/4 lg:w-1/2">
     <button onclick="closeVideo()" class="float-right text-red-500 font-bold text-xl">✖</button>
-    <iframe id="videoFrame" class="w-full h-64 md:h-96 mt-4" src="" frameborder="0" allowfullscreen></iframe>
+    <iframe id="videoFrame" class="w-full h-64 md:h-96 mt-4" src="" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
   </div>
 </div>
-
-<script>
-function openVideo(url){
-  function openVideo(url){   // Convert standard YouTube link to embed format   
-    const embedUrl = url.replace("watch?v=", "embed/");   
-    document.getElementById('videoFrame').src = embedUrl + "?autoplay=1";   
-    document.getElementById('videoModal').classList.remove('hidden'); }
-  document.getElementById('videoModal').classList.remove('hidden');
-}
-
-function closeVideo(){
-  document.getElementById('videoFrame').src = "";
-  document.getElementById('videoModal').classList.add('hidden');
-}
-
-// Tracker toggle
-function toggleStatus(el){
-  const day = el.dataset.day;
-  let current = localStorage.getItem(day) || 'red';
-
-  if(current === 'red'){
-    el.classList.remove('bg-red-200');
-    el.classList.add('bg-yellow-200');
-    localStorage.setItem(day, 'yellow');
-  } else if(current === 'yellow'){
-    el.classList.remove('bg-yellow-200');
-    el.classList.add('bg-green-200');
-    localStorage.setItem(day, 'green');
-  } else {
-    el.classList.remove('bg-green-200');
-    el.classList.add('bg-red-200');
-    localStorage.setItem(day, 'red');
-  }
-
-  updateProgress();
-}
-
-// Initialize tracker and show today
-document.addEventListener('DOMContentLoaded', () => {
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const todayIndex = new Date().getDay();
-  const todayName = days[todayIndex];
-
-  document.querySelectorAll('.tracker').forEach(el => {
-    const day = el.dataset.day;
-    const status = localStorage.getItem(day) || 'red';
-    el.classList.remove('bg-red-200','bg-yellow-200','bg-green-200');
-    el.classList.add(`bg-${status}-200`);
-    if(day === todayName){
-      el.classList.add('border-4','border-blue-500');
-    } else {
-      el.classList.remove('border-4','border-blue-500');
-    }
-  });
-
-  updateProgress();
-  showDay(todayName); // Show today’s workout by default
-});
-
-// Update weekly progress bar
-function updateProgress(){
-  const trackers = document.querySelectorAll('.tracker');
-  let completed = 0;
-  trackers.forEach(el => {
-    if(el.classList.contains('bg-green-200')) completed++;
-  });
-  const percent = Math.round((completed / trackers.length) * 100);
-  document.getElementById('progress-text').innerText = `${completed} of ${trackers.length} days completed`;
-  document.getElementById('progress-percent').innerText = `${percent}%`;
-  document.getElementById('progress-bar').style.width = percent + '%';
-}
-
-// Show selected workout day
-function showDay(day) {
-  document.querySelectorAll('.workout-day').forEach(el => {
-    if(el.dataset.day === day){
-      el.classList.remove('hidden');
-    } else {
-      el.classList.add('hidden');
-    }
-  });
-}
-</script>
 
 <!-- Tracker Section -->
 <section class="p-6 bg-gray-100">
@@ -248,10 +165,79 @@ function showDay(day) {
   <p>© 2025 Mehak Shaikh | Interactive Workout Plan</p>
 </footer>
 
+<script>
+// Video modal functions
+function openVideo(videoId){
+  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  document.getElementById('videoFrame').src = embedUrl;
+  document.getElementById('videoModal').classList.remove('hidden');
+}
+
+function closeVideo(){
+  document.getElementById('videoFrame').src = "";
+  document.getElementById('videoModal').classList.add('hidden');
+}
+
+// Workout tracker
+function toggleStatus(el){
+  const day = el.dataset.day;
+  let current = localStorage.getItem(day) || 'red';
+
+  if(current === 'red'){
+    el.classList.remove('bg-red-200');
+    el.classList.add('bg-yellow-200');
+    localStorage.setItem(day, 'yellow');
+  } else if(current === 'yellow'){
+    el.classList.remove('bg-yellow-200');
+    el.classList.add('bg-green-200');
+    localStorage.setItem(day, 'green');
+  } else {
+    el.classList.remove('bg-green-200');
+    el.classList.add('bg-red-200');
+    localStorage.setItem(day, 'red');
+  }
+
+  updateProgress();
+}
+
+function updateProgress(){
+  const trackers = document.querySelectorAll('.tracker');
+  let completed = 0;
+  trackers.forEach(el => { if(el.classList.contains('bg-green-200')) completed++; });
+  const percent = Math.round((completed / trackers.length) * 100);
+  document.getElementById('progress-text').innerText = `${completed} of ${trackers.length} days completed`;
+  document.getElementById('progress-percent').innerText = `${percent}%`;
+  document.getElementById('progress-bar').style.width = percent + '%';
+}
+
+// Show selected day
+function showDay(day) {
+  document.querySelectorAll('.workout-day').forEach(el => {
+    el.dataset.day === day ? el.classList.remove('hidden') : el.classList.add('hidden');
+  });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const todayName = days[new Date().getDay()];
+
+  document.querySelectorAll('.tracker').forEach(el => {
+    const day = el.dataset.day;
+    const status = localStorage.getItem(day) || 'red';
+    el.classList.remove('bg-red-200','bg-yellow-200','bg-green-200');
+    el.classList.add(`bg-${status}-200`);
+    if(day === todayName){
+      el.classList.add('border-4','border-blue-500');
+    } else {
+      el.classList.remove('border-4','border-blue-500');
+    }
+  });
+
+  updateProgress();
+  showDay(todayName);
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
