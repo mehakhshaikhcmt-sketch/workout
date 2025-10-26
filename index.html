@@ -128,7 +128,10 @@
 
 <script>
 function openVideo(url){
-  document.getElementById('videoFrame').src = url + "?autoplay=1";
+  function openVideo(url){   // Convert standard YouTube link to embed format   
+    const embedUrl = url.replace("watch?v=", "embed/");   
+    document.getElementById('videoFrame').src = embedUrl + "?autoplay=1";   
+    document.getElementById('videoModal').classList.remove('hidden'); }
   document.getElementById('videoModal').classList.remove('hidden');
 }
 
@@ -246,6 +249,7 @@ function showDay(day) {
 
 </body>
 </html>
+
 
 
 
